@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #271410;
+$beige-light: #D0D1CD;
+$background: #2F2E3E;
+$sunshine: #FCEC77;
+$orange: #C2390E;
+$dark-orange: #852C11;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$box-background: $sunshine;
+$button-focus-color: $background;
+$button-focus-border-color: $dark-orange;
+$button-color: $background;
+$button-background-color: $orange;
+$button-border-color: $dark-orange;
+$button-hover-color: $sunshine;
+$button-hover-border-color: $background;
+$button-border-width: 4px;
+$button-padding-horizontal: 4em;
+$link: $orange;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+$table-cell-border: 1px solid $dark-orange;
+$table-row-hover-background-color: $orange;
+$table-color: $background;
+$table-cell-heading-color: $background;
+$table-cell-color: $dark-orange;
+$table-background-color: $sunshine;
+
+// Update some of Bulma's component variables
+$body-background-color: $background;
+$box-background-color: $box-background;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import only what you need from Bulma
+@import "node_modules/bulma/sass/utilities/_all.sass";
+@import "node_modules/bulma/sass/base/_all.sass";
+@import "node_modules/bulma/sass/elements/_all.sass";
+@import "node_modules/bulma/sass/form/_all.sass";
+@import "node_modules/bulma/sass/components/navbar.sass";
+@import "node_modules/bulma/sass/layout/hero.sass";
+@import "node_modules/bulma/sass/layout/section.sass";
+@import "node_modules/bulma/sass/utilities/functions";
+@import "node_modules/bulma/sass/helpers/_all.sass";
+@import "node_modules/bulma/sass/grid/_all.sass";
