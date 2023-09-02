@@ -4,43 +4,36 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 // Set your brand colors
-$purple: #8A4D76;
-$pink: #FA7C91;
-$brown: #271410;
-$beige-light: #D0D1CD;
-$background: #2F2E3E;
-$sunshine: #FCEC77;
-$orange: #C2390E;
-$dark-orange: #852C11;
+$greyish: #2F2E3E;
+$offwhite: #E6E8BF;
+$yellow: #DDDA00;
+$orange: #F27900;
+$red: #DD1D00;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
-$grey-dark: $brown;
-$grey-light: $beige-light;
-$primary: $purple;
-$box-background: $sunshine;
-$button-focus-color: $background;
-$button-focus-border-color: $dark-orange;
-$button-color: $background;
+$box-background: $offwhite;
+$button-focus-color: $greyish;
+$button-focus-border-color: $orange;
+$button-color: $greyish;
 $button-background-color: $orange;
-$button-border-color: $dark-orange;
-$button-hover-color: $sunshine;
-$button-hover-border-color: $background;
+$button-border-color: $orange;
+$button-hover-border-color: $greyish;
 $button-border-width: 4px;
 $button-padding-horizontal: 4em;
 $link: $orange;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
-$table-cell-border: 1px solid $dark-orange;
+$table-cell-border: 1px solid $orange;
 $table-row-hover-background-color: $orange;
-$table-color: $background;
-$table-cell-heading-color: $background;
-$table-cell-color: $dark-orange;
-$table-background-color: $sunshine;
+$table-color: $greyish;
+$table-cell-heading-color: $greyish;
+$table-cell-color: $orange;
+$table-background-color: $offwhite;
 
 // Update some of Bulma's component variables
-$body-background-color: $background;
+$body-background-color: $greyish;
 $box-background-color: $box-background;
 $control-border-width: 2px;
 $input-border-color: transparent;
