@@ -10,26 +10,23 @@ $yellow: #DDDA00;
 $orange: #F27900;
 $red: #DD1D00;
 
+$primary: $offwhite;
 $dark: $greyish;
 $light: $offwhite;
 
 $navbar-box-shadow-color: $red;
+$label-color: $orange;
+$button-background-color: $greyish;
+$button-color: $offwhite;
+$button-hover-color: $orange;
+$link: $orange;
 
+$button-focus-border-color: $offwhite;
+$button-border-color: $offwhite;
+$button-hover-border-color: $offwhite;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
-$box-background: $offwhite;
-$button-focus-color: $greyish;
-$button-focus-border-color: $orange;
-$button-color: $greyish;
-$button-background-color: $orange;
-$button-border-color: $orange;
-$button-hover-border-color: $greyish;
-$button-border-width: 4px;
-$button-padding-horizontal: 4em;
-$link: $orange;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
 
 $table-cell-border: 1px solid $orange;
 $table-row-hover-background-color: $orange;
@@ -40,7 +37,7 @@ $table-background-color: $offwhite;
 
 // Update some of Bulma's component variables
 $body-background-color: $greyish;
-$box-background-color: $box-background;
+$box-background-color: $offwhite;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;

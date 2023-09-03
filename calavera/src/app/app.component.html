@@ -2,11 +2,11 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item">
-        Home
+        <a routerLink="">Home</a>
       </a>
 
       <a class="navbar-item">
-        Trivia Questions
+        <a routerLink="/trivia">Trivia Questions</a>
       </a>
     </div>
 
@@ -21,41 +21,5 @@
     </div>
   </div>
 </nav>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Category</th>
-      <th>Question</th>
-      <th>Answer</th>
-      <th>Enabled?</th>
-      <th>Created</th>
-      <th>Updated</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <th>Id</th>
-      <th>Category</th>
-      <th>Question</th>
-      <th>Answer</th>
-      <th>Enabled?</th>
-      <th>Created</th>
-      <th>Updated</th>
-    </tr>
-  </tfoot>
-  <tbody *ngFor="let q of triviaQuestions">
-    <tr>
-      <td>{{ q.id }}</td>
-      <td>{{ q.category }}</td>
-      <td>{{ q.question }}</td>
-      <td>{{ q.answer }}</td>
-      <td>{{ q.isEnabled }}</td>
-      <td>{{ q.createdDate }}</td>
-      <td>{{ q.updatedDate }}</td>
-    </tr>
-  </tbody>
-</table>
 
 <router-outlet></router-outlet>

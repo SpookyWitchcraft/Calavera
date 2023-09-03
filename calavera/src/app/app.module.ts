@@ -4,10 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TriviaComponent } from './features/trivia/trivia.component';
+import { TriviaEditComponent } from './features/trivia/trivia-edit.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TriviaComponent,
+    TriviaEditComponent
   ],
   imports: [
     BrowserModule,
