@@ -2,48 +2,48 @@
     <div class="field">
         <label class="label">Id</label>
         <div class="control">
-            <input class="input" type="text" placeholder="ID" is-primary disabled>
+            <input class="input" type="text" placeholder="ID" [(ngModel)]="triviaQuestion.id" is-primary disabled>
         </div>
     </div>
 
     <div class="field">
         <label class="label">Category</label>
         <div class="control">
-            <input class="input" type="text" placeholder="Category" is-primary>
+            <input class="input" type="text" placeholder="Category" [(ngModel)]="triviaQuestion.category" is-primary>
         </div>
     </div>
 
     <div class="field">
         <label class="label">Question</label>
         <div class="control">
-            <input class="input" type="text" placeholder="Question" is-primary>
+            <input class="input" type="text" placeholder="Question" [(ngModel)]="triviaQuestion.question" is-primary>
         </div>
     </div>
 
     <div class="field">
         <label class="label">Answer</label>
         <div class="control">
-            <input class="input" type="text" placeholder="Answer" is-primary>
+            <input class="input" type="text" placeholder="Answer" [(ngModel)]="triviaQuestion.answer" is-primary>
         </div>
     </div>
 
     <div class="field">
         <label class="label">Created</label>
         <div class="control">
-            <input class="input" type="text" placeholder="Created Date" is-primary disabled>
+            <input class="input" type="text" placeholder="Created Date" [(ngModel)]="triviaQuestion.createdDate" is-primary disabled>
         </div>
     </div>
 
     <div class="field">
         <label class="label">Updated</label>
         <div class="control">
-            <input class="input" type="text" placeholder="Updated Date" is-primary disabled>
+            <input class="input" type="text" placeholder="Updated Date" [(ngModel)]="triviaQuestion.updatedDate" is-primary disabled>
         </div>
     </div>
 
     <div class="field is-grouped">
         <div class="control">
-            <button class="button">Submit</button>
+            <button class="button" (click)="onSubmit()">Submit</button>
         </div>
         <div class="control">
             <button class="button">Cancel</button>
