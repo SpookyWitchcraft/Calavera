@@ -4,10 +4,11 @@ import { catchError, retry } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { TriviaQuestion } from '../models/triviaQuestion.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class TriviaService {
-  root = ""
+  root = environment.slimerUrl;
 
   constructor(private http: HttpClient) { }
 
