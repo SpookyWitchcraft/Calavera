@@ -22,23 +22,12 @@ import { environment } from 'src/environments/environment';
       domain: environment.auth0Domain,
       clientId: environment.auth0ClientId,
       authorizationParams: {
-        redirect_uri: window.location.origin
+        redirect_uri: window.location.origin,
+        audience: environment.auth0Audience
       },
       httpInterceptor: {
         allowedList: [
-          {
-            // Match any request that starts 'https://{yourDomain}/api/v2/' (note the asterisk)
-            uri: 'https://' + environment.auth0Domain + '/api/v2/*',
-            tokenOptions: {
-              authorizationParams: {
-                // The attached token should target this audience
-                audience: 'https://' + environment.auth0Domain + '/api/v2/',
-    
-                // The attached token should have these scopes
-                scope: 'read:current_user'
-              }
-            }
-          }
+          environment.slimerUrl + "/*"
         ]
       }
     }),
