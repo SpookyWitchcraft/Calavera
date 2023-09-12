@@ -10,26 +10,12 @@ import { ActivatedRoute, Router } from "@angular/router";
     providers: [TriviaService]
   })
 
-export class TriviaComponent implements OnInit {
-    triviaQuestions: TriviaQuestion[] = [];
+export class TriviaComponent {
+    triviaQuestionId: string = "";
 
-  constructor(private readonly router: Router, private readonly route: ActivatedRoute, @Inject(TriviaService) private readonly triviaService: TriviaService) {}
+  constructor(private readonly router: Router, private readonly route: ActivatedRoute) {}
 
-  ngOnInit() {
-    this.triviaService.getTrivia().subscribe({
-      next: (data) => {
-        this.triviaQuestions = data;
-      },
-      error: (error) => {
-        console.log(error)
-      },
-      complete: () => {
-        console.log('complete')
-      }
-    })
-  }
-
-  edit(id: number) {
-    this.router.navigate(['edit', id], { relativeTo: this.route });
+  edit() {
+    this.router.navigate(['edit', this.triviaQuestionId], { relativeTo: this.route });
   }
 }
