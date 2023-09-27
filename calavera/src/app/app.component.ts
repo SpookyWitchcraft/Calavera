@@ -10,6 +10,8 @@ import { DOCUMENT } from '@angular/common';
 export class AppComponent {
   constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
 
+  title: string = "calavera";
+
   login() {
     this.auth.loginWithRedirect();
   }
