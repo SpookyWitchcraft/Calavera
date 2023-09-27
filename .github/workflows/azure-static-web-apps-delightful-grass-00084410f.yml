@@ -12,12 +12,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: 18
-    - run: cd ./calavera
     - run: npm install
     - run: npm ci
     - run: npm test
