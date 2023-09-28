@@ -20,8 +20,8 @@ jobs:
       env:
         SLIMER_URL: ${{ secrets.SLIMER_URL }}
     - run: |
-        npm run config
         cd ./calavera
+        npm run config
         npm install
         npm ci
         npm test -- --watch=false --browsers=ChromeHeadless
