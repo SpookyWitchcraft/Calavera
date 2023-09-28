@@ -14,10 +14,16 @@ export class TriviaService {
 
   getTrivia() {
     return this.http.get<TriviaQuestion[]>(this.root + "/api/trivia/search")
+    .pipe(
+      catchError(this.handleError)
+    )
   }
 
   searchTrivia(id: number) {
     return this.http.get<TriviaQuestion>(this.root + "/api/trivia/search/" + id)
+    .pipe(
+      catchError(this.handleError)
+    )
   }
 
   saveTrivia(triviaQuestion: TriviaQuestion) {
