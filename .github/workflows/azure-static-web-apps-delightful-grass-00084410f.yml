@@ -17,7 +17,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
+      env:
+        SLIMER_URL: ${{ secrets.SLIMER_URL }}
     - run: |
+        npm run config
         cd ./calavera
         npm install
         npm ci
