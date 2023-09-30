@@ -1,5 +1,5 @@
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, retry, timeout } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -15,6 +15,7 @@ export class TriviaService {
   getTrivia() {
     return this.http.get<TriviaQuestion[]>(this.root + "/api/trivia/search")
     .pipe(
+      timeout(10000),
       catchError(this.handleError)
     )
   }
@@ -22,6 +23,7 @@ export class TriviaService {
   searchTrivia(id: number) {
     return this.http.get<TriviaQuestion>(this.root + "/api/trivia/search/" + id)
     .pipe(
+      timeout(10000),
       catchError(this.handleError)
     )
   }
@@ -29,6 +31,7 @@ export class TriviaService {
   saveTrivia(triviaQuestion: TriviaQuestion) {
     return this.http.post<TriviaQuestion>(this.root + "/api/trivia", triviaQuestion)
       .pipe(
+        timeout(10000),
         catchError(this.handleError)
       )
   }
@@ -44,6 +47,6 @@ export class TriviaService {
         `Backend returned code ${error.status}, body was: `, error.error);
     }
     // Return an observable with a user-facing error message.
-    return throwError(() => new Error('Something bad happened; please try again later.'));
+    return throwError(() => new HttpErrorResponse({ status: error.status, error: error.error }));
   }
 }
