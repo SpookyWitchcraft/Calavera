@@ -5,13 +5,29 @@ on:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, closed]
     branches:
       - main
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+      env:
+        SLIMER_URL: ${{ secrets.SLIMER_URL }}
+    - run: |
+        cd ./calavera
+        npm install
+        npm run config
+        npm ci
+        npm test -- --watch=false --browsers=ChromeHeadless
+
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event.pull_request.merged == true && (github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed'))
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
