@@ -4,16 +4,16 @@ import { TriviaService } from "src/app/services/trivia.service";
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-    selector: 'app-trivia-edit',
-    templateUrl: './trivia-edit.component.html',
-    styleUrls: ['../../app.component.scss'],
-    providers: [TriviaService]
-  })
+  selector: 'app-trivia-edit',
+  templateUrl: './trivia-edit.component.html',
+  styleUrls: ['../../app.component.scss'],
+  providers: [TriviaService]
+})
 
 export class TriviaEditComponent implements OnInit {
   triviaQuestion!: TriviaQuestion;
 
-  constructor(private readonly router: Router, private readonly route: ActivatedRoute, @Inject(TriviaService) private readonly triviaService: TriviaService) {}
+  constructor(private readonly router: Router, private readonly route: ActivatedRoute, @Inject(TriviaService) private readonly triviaService: TriviaService) { }
 
   ngOnInit() {
     this.triviaQuestion = {} as TriviaQuestion
