@@ -8,8 +8,8 @@ describe('AppComponent', () => {
     imports: [
       RouterTestingModule, 
       AuthModule.forRoot({
-        domain: 'asdf',
-        clientId: 'asdf'  
+        domain: 'domain',
+        clientId: 'clientid'  
     })
     ],
     declarations: [AppComponent]

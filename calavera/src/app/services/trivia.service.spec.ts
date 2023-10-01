@@ -101,24 +101,6 @@ describe('TriviaService', () => {
     httpMock.verify();
   });
 
-  //////////////////////////
-
-  // it('search should return error', (done) => {
-  //   const mockErrorResponse = { status: 400, statusText: 'Bad request' };
-  //   const data = 'Invalid request';
-
-  //   triviaService.searchTrivia(1).subscribe(x => {
-
-  //   }, err => {
-  //     expect(err).toBeTruthy();
-  //     console.log(err.error);
-  //     done();
-  //   });
-  //   const req = httpMock.expectOne(`${environment.slimerUrl}/api/trivia/search/${1}`);
-  //   expect(req.request.method).toEqual('GET');
-  //   req.flush(data, mockErrorResponse);
-  // });
-
   it('get throws error', () => {
     triviaService.getTrivia().subscribe(
       data => fail('Should have failed with error'),
@@ -131,7 +113,6 @@ describe('TriviaService', () => {
 
     const req = httpMock.expectOne(`${environment.slimerUrl}/api/trivia/search`);
 
-    // Respond with mock error
     req.flush('0', { status: 0, statusText: 'An error occurred:' });
   });
 
@@ -173,7 +154,6 @@ describe('TriviaService', () => {
 
     const req = httpMock.expectOne(`${environment.slimerUrl}/api/trivia`);
 
-    // Respond with mock error
     req.flush('500', { status: 500, statusText: 'Internal Server Error' });
   });
 });
