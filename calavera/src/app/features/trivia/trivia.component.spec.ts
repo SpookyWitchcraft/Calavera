@@ -61,7 +61,7 @@ describe('TriviaComponent', () => {
         const fixture = TestBed.createComponent(TriviaComponent);
         const triviaComponent = fixture.componentInstance;
         triviaComponent.ngOnInit();
-        console.log(triviaComponent.triviaQuestions);
+        
         expect(triviaComponent.triviaQuestions).toEqual(questions);
     });
 
@@ -73,8 +73,6 @@ describe('TriviaComponent', () => {
         triviaComponent.edit(1);
         
         let routeInfo = navigateSpy.calls.first().args[0];
-        console.log(routeInfo[0]);
-        console.log(routeInfo[1]);
 
         expect(routeInfo[0]).toBe('edit');
         expect(routeInfo[1]).toBe(1);
