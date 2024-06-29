@@ -78,7 +78,7 @@ describe('TriviaService', () => {
     httpMock.verify();
   });
 
-  it('save should post question', () => {
+  it('save should put question', () => {
 
     const question: TriviaQuestion = {
       id: 1,
@@ -95,7 +95,7 @@ describe('TriviaService', () => {
     });
 
     const req = httpMock.expectOne(environment.slimerUrl + '/api/trivia');
-    expect(req.request.method).toEqual("POST");
+    expect(req.request.method).toEqual("PUT");
     req.flush(question);
 
     httpMock.verify();
