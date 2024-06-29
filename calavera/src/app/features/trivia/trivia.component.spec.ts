@@ -10,7 +10,7 @@ describe('TriviaComponent', () => {
     let router: Router;
 
     beforeEach(() => {
-        httpSpy = jasmine.createSpyObj('HttpClient', ['get', 'post']);
+        httpSpy = jasmine.createSpyObj('HttpClient', ['get', 'put']);
 
         TestBed.configureTestingModule({
             imports: [

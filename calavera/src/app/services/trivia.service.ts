@@ -14,22 +14,22 @@ export class TriviaService {
 
   getTrivia() {
     return this.http.get<TriviaQuestion[]>(this.root + "/api/trivia/search")
-    .pipe(
-      timeout(10000),
-      catchError(this.handleError)
-    )
+      .pipe(
+        timeout(10000),
+        catchError(this.handleError)
+      )
   }
 
   searchTrivia(id: number) {
     return this.http.get<TriviaQuestion>(this.root + "/api/trivia/search/" + id)
-    .pipe(
-      timeout(10000),
-      catchError(this.handleError)
-    )
+      .pipe(
+        timeout(10000),
+        catchError(this.handleError)
+      )
   }
 
   saveTrivia(triviaQuestion: TriviaQuestion) {
-    return this.http.post<TriviaQuestion>(this.root + "/api/trivia", triviaQuestion)
+    return this.http.put<TriviaQuestion>(this.root + "/api/trivia", triviaQuestion)
       .pipe(
         timeout(10000),
         catchError(this.handleError)

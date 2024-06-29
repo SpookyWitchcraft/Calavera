@@ -12,18 +12,18 @@ describe('TriviaComponent', () => {
     let router: Router;
 
     const question: TriviaQuestion =
-        {
-            id: 1,
-            category: "general",
-            question: "When?",
-            answer: "Now",
-            isEnabled: true,
-            createdDate: new Date(),
-            updatedDate: new Date()
-        };
+    {
+        id: 1,
+        category: "general",
+        question: "When?",
+        answer: "Now",
+        isEnabled: true,
+        createdDate: new Date(),
+        updatedDate: new Date()
+    };
 
     beforeEach(() => {
-        httpSpy = jasmine.createSpyObj('HttpClient', ['get', 'post']);
+        httpSpy = jasmine.createSpyObj('HttpClient', ['get', 'put']);
 
         TestBed.configureTestingModule({
             imports: [
@@ -51,7 +51,7 @@ describe('TriviaComponent', () => {
         const fixture = TestBed.createComponent(TriviaEditComponent);
         const triviaEditComponent = fixture.componentInstance;
         triviaEditComponent.ngOnInit();
-    
+
         expect(triviaEditComponent.triviaQuestion).toEqual(question);
     });
 
@@ -66,9 +66,9 @@ describe('TriviaComponent', () => {
             createdDate: new Date(),
             updatedDate: new Date()
         };
-        
+
         httpSpy.get.and.returnValue(of(question))
-        httpSpy.post.and.returnValue(of(updatedQuestion))
+        httpSpy.put.and.returnValue(of(updatedQuestion))
 
         const fixture = TestBed.createComponent(TriviaEditComponent);
         const triviaEditComponent = fixture.componentInstance;
